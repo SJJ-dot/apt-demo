@@ -36,8 +36,8 @@ public class MyClass extends AbstractProcessor {
 
     @Override
     public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
-        processingEnv.getMessager().printMessage(Diagnostic.Kind.WARNING,annotations.toString());
-
+        processingEnv.getMessager().printMessage(Diagnostic.Kind.WARNING,"aaaaaaaaaaaaa===============================sssssssssssssssssss");
+        Hello.s(processingEnv);
         MethodSpec main = MethodSpec.methodBuilder("main")
                 .addModifiers(Modifier.PUBLIC, Modifier.STATIC)
                 .returns(void.class)

@@ -1,11 +1,25 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm'
+}
 apply plugin: 'java-library'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.squareup:javapoet:1.9.0'
     compile 'com.google.auto.service:auto-service:1.0-rc2'
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
     compile project(':api')
 }
 
 sourceCompatibility = "7"
 targetCompatibility = "7"
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+compileTestKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
